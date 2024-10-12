@@ -1,4 +1,4 @@
-# Cat litter reminder
+# Cat litter reminder - UPDATED by Brett
 
 This is a pet project (pun intended) for helping cat owners remember to clean the litter box.
 

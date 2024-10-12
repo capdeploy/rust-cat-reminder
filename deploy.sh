@@ -1,18 +1,21 @@
 #!/bin/bash
 
+ip=
+user=brichter
+
 set -o errexit
 set -o nounset
 set -o xtrace
 
-allNodes=("cat" "cat1" "cat2" "cat3" "cat4")
+allNodes=($ip)
 
-readonly TARGET_HOST=manu@cat1.local
-readonly TARGET_HOST_2=manu@cat2.local
-readonly TARGET_PATH=/home/manu/cat-litter-reminder
+readonly TARGET_HOST=$user@cat1.local
+#readonly TARGET_HOST_2=$user@cat2.local
+readonly TARGET_PATH=/home/$user/cat-litter-reminder
 readonly TARGET_ARCH=armv7-unknown-linux-gnueabihf
 readonly SOURCE_PATH=./target/${TARGET_ARCH}/release/cat-litter-reminder
 
 cross build --release --target=${TARGET_ARCH}
 for n in ${allNodes[@]}; do
-  rsync ${SOURCE_PATH} manu@${n}.local:${TARGET_PATH}
+  rsync ${SOURCE_PATH} $user@${n}.local:${TARGET_PATH}
 done
