@@ -8,4 +8,4 @@ set -o nounset
 set -o xtrace
 
 rsync -a $user@$ip:~/cat-litter-reminder ~/workspace
-#sh deploy.sh
+sh deploy.sh
