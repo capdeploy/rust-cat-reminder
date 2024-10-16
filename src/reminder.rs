@@ -33,9 +33,9 @@ impl LEDStripState {
     fn state_from_duration(duration: &Duration) -> Self {
         match duration.num_minutes() {
             0..=5 => LEDStripState::LightGreen,
-            6..=2880 => LEDStripState::Black,
-            2881..=4320 => LEDStripState::Orange,
-            4321..5040 => LEDStripState::Red,
+            6..=7 => LEDStripState::Black,
+            8..=9 => LEDStripState::Orange,
+            10..11 => LEDStripState::Red,
             _ => LEDStripState::BlinkingRed
         }
     }
