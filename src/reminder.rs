@@ -43,7 +43,7 @@ impl LEDStripState {
 
     fn controller_color(&self) -> RawColor {
         match self {
-            LEDStripState::LightGreen => RPILedController::BLUE,
+            LEDStripState::Blue => RPILedController::BLUE,
             LEDStripState::Black => RPILedController::BLACK,
             LEDStripState::Orange => RPILedController::ORANGE,
             LEDStripState::Red => RPILedController::RED,
