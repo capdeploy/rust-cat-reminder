@@ -4,6 +4,7 @@ pub trait LedController {
 
     const BLACK: RawColor = [0, 0, 0, 0];
     const LIGHT_GREEN: RawColor = [0, 60, 0, 0];
+    const BLUE: RawColor = [0, 0, 60, 0];
     const DARK_GREEN: RawColor = [0, 20, 0, 0];
     const ORANGE: RawColor = [0, 60, 255, 0];
     const RED: RawColor = [0, 0, 255, 0];
