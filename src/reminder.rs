@@ -32,7 +32,7 @@ enum LEDStripState {
 impl LEDStripState {
     fn state_from_duration(duration: &Duration) -> Self {
         match duration.num_hours() {
-            0..=1 => LEDStripState::Blue,
+            0..=1 => LEDStripState::LightBlue,
             1..=48 => LEDStripState::Black,
             48..=72 => LEDStripState::Orange,
             72..=84 => LEDStripState::Red,
@@ -42,7 +42,7 @@ impl LEDStripState {
 
     fn controller_color(&self) -> RawColor {
         match self {
-            LEDStripState::Blue => RPILedController::BLUE,
+            LEDStripState::LightBlue => RPILedController::LIGHT_BLUE,
             LEDStripState::Black => RPILedController::BLACK,
             LEDStripState::Orange => RPILedController::ORANGE,
             LEDStripState::Red => RPILedController::RED,
