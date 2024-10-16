@@ -22,7 +22,7 @@ pub enum ReminderEvent {
 
 #[derive(PartialEq)]
 enum LEDStripState {
-    Blue,
+    LightGreen,
     Black,
     Orange,
     Red,
@@ -32,17 +32,17 @@ enum LEDStripState {
 impl LEDStripState {
     fn state_from_duration(duration: &Duration) -> Self {
         match duration.num_hours() {
-            0..=1 => LEDStripState::LightBlue,
-            1..=48 => LEDStripState::Black,
-            48..=72 => LEDStripState::Orange,
-            72..=84 => LEDStripState::Red,
+            0..=1 => LEDStripState::LightGreen,
+            2..=48 => LEDStripState::Black,
+            49..=72 => LEDStripState::Orange,
+            73..=84 => LEDStripState::Red,
             _ => LEDStripState::BlinkingRed
         }
     }
 
     fn controller_color(&self) -> RawColor {
         match self {
-            LEDStripState::LightBlue => RPILedController::LIGHT_BLUE,
+            LEDStripState::LightGreen => RPILedController::LIGHT_GREEN,
             LEDStripState::Black => RPILedController::BLACK,
             LEDStripState::Orange => RPILedController::ORANGE,
             LEDStripState::Red => RPILedController::RED,
