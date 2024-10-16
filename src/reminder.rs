@@ -31,11 +31,11 @@ enum LEDStripState {
 
 impl LEDStripState {
     fn state_from_duration(duration: &Duration) -> Self {
-        match duration.num_seconds() {
-            0..=0.5 => LEDStripState::LightGreen,
-            1..=48 => LEDStripState::Black,
-            49..=72 => LEDStripState::Orange,
-            73..=84 => LEDStripState::Red,
+        match duration.num_minutes() {
+            0..=5 => LEDStripState::LightGreen,
+            6..=7 => LEDStripState::Black,
+            8..=9 => LEDStripState::Orange,
+            10..11 => LEDStripState::Red,
             _ => LEDStripState::BlinkingRed
         }
     }
