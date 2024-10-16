@@ -3,7 +3,7 @@ use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::mpsc::{Receiver, Sender};
 use std::thread::sleep;
 use chrono::{DateTime, Duration, Utc};
-use chrono_tz::Europe::Vienna;
+use chrono_tz::US::Eastern;
 use chrono::Timelike;
 
 use gpiod::{Chip, Options};
@@ -74,7 +74,7 @@ impl Reminder {
                 }
             }
 
-            let now = Utc::now().with_timezone(&Vienna);
+            let now = Utc::now().with_timezone(&Eastern);
             let is_night = now.hour() >= 22 || now.hour() < 7;
             let time_elapsed = Utc::now().signed_duration_since(self.last_cleaning_time);
             let current_state = LEDStripState::state_from_duration(&time_elapsed);
