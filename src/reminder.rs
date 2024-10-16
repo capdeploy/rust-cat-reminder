@@ -22,7 +22,6 @@ pub enum ReminderEvent {
 
 #[derive(PartialEq)]
 enum LEDStripState {
-    LightGreen,
     Blue,
     Black,
     Orange,
