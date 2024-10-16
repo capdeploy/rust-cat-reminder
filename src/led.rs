@@ -33,7 +33,7 @@ impl LedController for RPILedController {
 
 impl RPILedController {
 
-    const NUM_LEDS: i32 = 7;
+    const NUM_LEDS: i32 = 10;
     const LED_PIN: i32 = 18;
 
     pub fn new() -> Self {
