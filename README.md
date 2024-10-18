@@ -11,5 +11,27 @@ This is a pet project (pun intended) for helping cat owners remember to clean th
 ## Raspberry PI prerequisites
 
 - don't use Raspbian, instead use e.g. `Ubuntu 22.10` (more recent GCC)
+
+## Brett Edits
+- Build on the RPI as it is easier then getting cross compiling working
+- Install Rust
+    - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    - cargo build
+    - cargo run
+- Create rc.local and /etc/systemd/system/rc-local.service
+#!/bin/bash
+
+cd /home/ubuntu/projects/rust-cat-reminder
+/root/.cargo/bin/cargo run
+
+[Unit]
+Description=Local Startup Script
+
+[Service]
+Type=simple
+ExecStart=/etc/rc.local
+
+[Install]
+WantedBy=multi-user.target
     
 
