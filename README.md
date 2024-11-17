@@ -33,5 +33,11 @@ ExecStart=/etc/rc.local
 
 [Install]
 WantedBy=multi-user.target
-    
 
+## Hardware
+- switch ground and pin 5 (count 6 from end)
+- LED Red to 5v, white to grnd, green to pin 18
+
+## Helpful links
+- https://core-electronics.com.au/guides/fully-addressable-rgb-raspberry-pi/
+- https://manuel.bernhardt.io/posts/2024-01-12-rust-cat-litter-box/
