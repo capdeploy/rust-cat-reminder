@@ -108,7 +108,7 @@ if __name__ == '__main__':
             print ('Rainbow animations.')
             rainbow(strip)
             rainbowCycle(strip)
-            theaterChaseRainbow(strip)
+            #theaterChaseRainbow(strip)
 
     except KeyboardInterrupt:
         if args.clear:
